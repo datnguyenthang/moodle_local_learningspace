@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/learningspace/db" VERSION="20240319" COMMENT="XMLDB file for Moodle local/learningspace">
+  <TABLES>
+    <TABLE NAME="local_learningspace" COMMENT="It contains workspaces based on cohorts">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Primary key" />
+        <FIELD NAME="name" TYPE="char" LENGTH="256" NOTNULL="true" COMMENT="Name of the workspace" />  
+        <FIELD NAME="description" TYPE="text" NOTNULL="false" COMMENT="Description of the workspace" />  
+        <FIELD NAME="cohort_ids" TYPE="char" LENGTH="256" NOTNULL="false" COMMENT="Comma-separated list of cohort IDs" />
+        <FIELD NAME="user_ids" TYPE="char" LENGTH="256" NOTNULL="false" COMMENT="Comma-separated list of user IDs" />
+        <FIELD NAME="owner_ids" TYPE="char" LENGTH="256" NOTNULL="false" COMMENT="Comma-separated list of owner IDs" />
+        <FIELD NAME="published" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" COMMENT="Published status (0 or 1)" />
+        <FIELD NAME="is_default" TYPE="tinyint" LENGTH="2" NOTNULL="false" SEQUENCE="false"  DEFAULT="0"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="11" NOTNULL="true" COMMENT="Timestamp for when the record was created" />
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="11" NOTNULL="true" COMMENT="Timestamp for when the record was last modified" />
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" />
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
